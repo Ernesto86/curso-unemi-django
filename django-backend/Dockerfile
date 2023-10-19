@@ -28,4 +28,4 @@ ENV VERSION=${version}
 ARG branch=dev
 ENV BRANCH=${branch}
 RUN ["chmod", "+x", "/app/docker/entrypoint.sh"]
-ENTRYPOINT ["/app/docker/entrypoint.sh"]
+# ENTRYPOINT ["/app/docker/entrypoint.sh"]
