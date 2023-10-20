@@ -30,3 +30,30 @@ Plantilla Inicial Docker, python 3.10 y Django 4.
 ## Caso de estudio - modelo UML de ventas.
 
 ![Optional Text](./capturas/ventas-uml.PNG)
+
+
+### Pasos para crear modulos o aplicaciones en Django
+
+        docker exec -it dev-django-unemi-01 python manage.py startapp catalogo, ventas, inventario, sistema
+
+No olvidar agregar el nombre del nuevo app en el archivo settings.py
+
+        INSTALLED_APPS = [
+           ...,
+           'name_app',
+        ]
+
+### Para conectar Docker con PosgreSQL Local
+Modificar el archivo `pg_hba.conf` en la siguiente ruta:
+
+        C:\Program Files\PostgreSQL\15\data\pg_hba.conf
+
+Agregar la siguiente linea, En la direccion de red ajustar de acuerdo a la red de area local.
+
+        host  all  all   192.168.1.0/24  scram-sha-256
+
+### Pasos para la migracion (Persistencia) con PosgreSQL Local
+
+        docker exec -it dev-django-unemi-01 python manage.py makemigrations
+        docker exec -it dev-django-unemi-01 python manage.py migrate
+        docker exec -it dev-django-unemi-01 python manage.py createsuperuser
