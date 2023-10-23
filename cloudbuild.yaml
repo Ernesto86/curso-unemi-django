@@ -23,7 +23,7 @@ steps:
     - "--set-env-vars=DB_DIALECT=${_DB_ENGINE}"
     - "--set-env-vars=DB_SOCKET=${_DB_SOCKET}"
     - "--set-env-vars=DB_DATABASE=${_DB_DATABASE}"
-    - "--set-env-vars=DB_USERNAME=${_DB_USERNAME}"
+    - "--set-env-vars=DB_USER=${_DB_USER}"
     - "--set-env-vars=DB_PASSWORD=${_DB_PASSWORD}"
     # Memoria - Instancias
     - --memory=$_MEMORY_LIMIT
